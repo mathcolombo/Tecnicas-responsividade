@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Interativo de Design Responsivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <header class="bg-fdfaf7/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold highlight-text">Design Responsivo</h1>
+            <div class="hidden md:flex items-center space-x-8" id="nav-menu">
+                <a href="#inicio" class="nav-link text-gray-600 hover:highlight-text transition-colors">Início</a>
+                <a href="#pilares" class="nav-link text-gray-600 hover:highlight-text transition-colors">Pilares</a>
+                <a href="#tecnologias" class="nav-link text-gray-600 hover:highlight-text transition-colors">Tecnologias</a>
+                <a href="#frameworks" class="nav-link text-gray-600 hover:highlight-text transition-colors">Frameworks</a>
+                <a href="#praticas" class="nav-link text-gray-600 hover:highlight-text transition-colors">Práticas</a>
+                <a href="#desafios" class="nav-link text-gray-600 hover:highlight-text transition-colors">Desafios</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md">
+                <span class="text-2xl">☰</span>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-fdfaf7 px-6 pb-4">
+             <a href="#inicio" class="block py-2 nav-link text-gray-600">Início</a>
+             <a href="#pilares" class="block py-2 nav-link text-gray-600">Pilares</a>
+             <a href="#tecnologias" class="block py-2 nav-link text-gray-600">Tecnologias</a>
+             <a href="#frameworks" class="block py-2 nav-link text-gray-600">Frameworks</a>
+             <a href="#praticas" class="block py-2 nav-link text-gray-600">Práticas</a>
+             <a href="#desafios" class="block py-2 nav-link text-gray-600">Desafios</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="inicio" class="text-center min-h-[60vh] flex flex-col justify-center items-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4">A Era da Adaptação Digital</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-700 mb-8">
+                Explore as técnicas e conceitos fundamentais para construir aplicações que oferecem uma experiência perfeita em qualquer dispositivo.
+            </p>
+            <div class="bg-white/50 rounded-lg p-6 shadow-md border border-gray-200">
+                <p class="text-3xl font-bold highlight-text">> 60%</p>
+                <p class="text-gray-600">do tráfego da web em 2024 é originado de dispositivos móveis, tornando a responsividade um imperativo de negócios.</p>
+            </div>
+        </section>
+
+        <section id="pilares" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">Os 3 Pilares do Design Responsivo</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Propostos por Ethan Marcotte, estes são os princípios que fundamentam toda a web moderna e adaptável.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-bg p-8 rounded-lg shadow-sm border border-gray-200 text-center">
+                    <div class="text-4xl mb-4">⛶</div>
+                    <h3 class="text-xl font-bold mb-2">Grids Fluidos</h3>
+                    <p class="text-gray-600">Layouts que usam unidades relativas, como porcentagens, em vez de pixels fixos, permitindo que a estrutura se adapte dinamicamente ao tamanho da tela.</p>
+                </div>
+                <div class="card-bg p-8 rounded-lg shadow-sm border border-gray-200 text-center">
+                    <div class="text-4xl mb-4">🖼️</div>
+                    <h3 class="text-xl font-bold mb-2">Mídia Flexível</h3>
+                    <p class="text-gray-600">Imagens e outros tipos de mídia são dimensionados para não excederem a largura de seu contêiner, evitando quebras de layout e rolagem horizontal.</p>
+                </div>
+                <div class="card-bg p-8 rounded-lg shadow-sm border border-gray-200 text-center">
+                    <div class="text-4xl mb-4">🔍</div>
+                    <h3 class="text-xl font-bold mb-2">Media Queries</h3>
+                    <p class="text-gray-600">Regras de CSS que aplicam estilos diferentes com base nas características do dispositivo, como largura, altura ou orientação da tela.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tecnologias" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">Tecnologias Essenciais</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">As ferramentas que transformam a teoria em prática. Redimensione seu navegador para ver a mágica acontecer.</p>
+            </div>
+
+            <div id="breakpoint-indicator" class="sticky top-[70px] z-40 mb-12 p-4 rounded-lg text-center font-bold text-white transition-all duration-300">
+                Breakpoint Atual: <span id="breakpoint-name"></span> (<span id="window-width"></span>px)
+            </div>
+
+            <div class="card-bg p-8 rounded-lg shadow-sm border border-gray-200">
+                <h3 class="text-2xl font-bold mb-4 text-center">Flexbox vs. CSS Grid</h3>
+                <p class="text-center text-gray-600 mb-6">Clique nos botões para ver como cada tecnologia organiza os mesmos elementos. Flexbox para layouts unidimensionais e Grid para bidimensionais.</p>
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button id="flexbox-btn" class="btn-secondary active py-2 px-6 rounded-md font-semibold">Flexbox</button>
+                    <button id="grid-btn" class="btn-secondary py-2 px-6 rounded-md font-semibold">CSS Grid</button>
+                </div>
+                <div id="layout-demo-container" class="bg-gray-200/50 p-4 rounded-lg min-h-[300px] transition-all duration-500">
+                    <div class="bg-rose-200 p-4 rounded">Item 1</div>
+                    <div class="bg-sky-200 p-4 rounded">Item 2</div>
+                    <div class="bg-emerald-200 p-4 rounded">Item 3</div>
+                    <div class="bg-amber-200 p-4 rounded">Item 4</div>
+                    <div class="bg-violet-200 p-4 rounded">Item 5</div>
+                </div>
+                <div class="mt-4 p-4 bg-white rounded-lg border">
+                    <p id="explanation-text" class="text-center text-gray-700"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="frameworks" class="py-20">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">Frameworks Populares</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Bibliotecas que aceleram o desenvolvimento responsivo. Clique em um card para ver os detalhes.</p>
+            </div>
+            <div id="frameworks-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+        </section>
+
+        <section id="praticas" class="py-20">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">Boas Práticas</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Princípios e metodologias para criar aplicações responsivas eficazes, performáticas e com ótima experiência de usuário.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-bg p-8 rounded-lg shadow-sm border border-gray-200">
+                     <h3 class="text-xl font-bold mb-3">📱 Mobile-First</h3>
+                     <p class="text-gray-600">Comece projetando para a menor tela. Isso força a priorização do conteúdo essencial e resulta em um design mais limpo e focado, que é então aprimorado para telas maiores.</p>
+                </div>
+                 <div class="card-bg p-8 rounded-lg shadow-sm border border-gray-200">
+                     <h3 class="text-xl font-bold mb-3">⚡ Desempenho Primeiro</h3>
+                     <p class="text-gray-600">Otimize a velocidade de carregamento. Comprima imagens, utilize lazy loading e minimize arquivos CSS/JS. Um site responsivo que carrega lentamente ainda oferece uma má experiência.</p>
+                </div>
+                 <div class="card-bg p-8 rounded-lg shadow-sm border border-gray-200">
+                     <h3 class="text-xl font-bold mb-3">🎯 Breakpoints por Conteúdo</h3>
+                     <p class="text-gray-600">Defina breakpoints onde o layout "quebra", não com base em tamanhos de dispositivos específicos. O design deve servir ao conteúdo, e não o contrário.</p>
+                </div>
+                 <div class="card-bg p-8 rounded-lg shadow-sm border border-gray-200">
+                     <h3 class="text-xl font-bold mb-3">🧪 Testes Contínuos</h3>
+                     <p class="text-gray-600">Use ferramentas de navegador e dispositivos reais para testar. Simuladores são bons, mas nada substitui o teste em hardware real para garantir a qualidade da interação e do desempenho.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="desafios" class="py-20">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">Desafios Comuns e Soluções</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Enfrente os obstáculos mais comuns no desenvolvimento responsivo com as estratégias certas. Clique para expandir.</p>
+            </div>
+            <div id="challenges-accordion" class="space-y-4">
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-gray-100 border-t border-gray-200">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600">
+            <p>Guia Interativo de Design Responsivo.</p>
+            <p>Criado para fins educacionais com base no relatório fornecido.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
